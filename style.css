@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* ===============================
+   NAVBAR – Elegant with Hamburger
+================================= */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+nav:hover {
+  background: rgba(15, 23, 42, 0.98);
+}
+
+nav h1 {
+  color: #38bdf8;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: default;
+  transition: 0.3s;
+}
+
+nav h1:hover {
+  color: #60a5fa;
+  transform: scale(1.05);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #38bdf8;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #38bdf8;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Hamburger X animation */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    background: rgba(15, 23, 42, 0.97);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 20px;
+    gap: 25px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  nav ul.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.hero span {
+  color: #38bdf8;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* SECTIONS – with transitions */
+section {
+  padding: 100px 10%;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.8s ease-in-out;
+}
+
+section.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Optional: staggered delay */
+section:nth-child(odd) {
+  transition-delay: 0.2s;
+}
+section:nth-child(even) {
+  transition-delay: 0.4s;
+}
+
+h3 {
+  color: #38bdf8;
+  margin-bottom: 30px;
+}
+
+.project {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Skills */
+.skill {
+  margin-bottom: 20px;
+}
+
+.progress {
+  background: #1e293b;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #38bdf8;
+  width: 0;
+  transition: 1.5s;
+}
+
+/* Essay Buttons */
+.essay-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.download-btn {
+  padding: 10px 22px;
+  border: 1.5px solid #38bdf8;
+  color: #38bdf8;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.secondary-btn {
+  border-color: #94a3b8;
+  color: #94a3b8;
+}
+
+.secondary-btn:hover {
+  background: #94a3b8;
+  color: #0f172a;
+}
+
+.social-links a {
+  margin-right: 15px;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+/* VIDEOS – Portrait & Side by Side */
+.videos-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portrait-video {
+  width: 250px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #38bdf8;
+}
+
+.videos-container .project {
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e293b;
+}
+section {
+  padding: 100px 10%;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.8s ease-in-out;
+
+  /* Drop shadow */
+  background: #1e293b; /* Ensure sections have a background */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+section.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Optional: staggered delay for smoother effect */
+section:nth-child(odd) {
+  transition-delay: 0.2s;
+}
+section:nth-child(even) {
+  transition-delay: 0.4s;
+}
+.instagram-media {
+  width: 100% !important;
+  max-width: 450px !important;
+  margin: 0 auto !important;
+}
+/* Instagram Video Container */
+.videos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Project Card Container */
+.videos-container .project {
+  width: 100%;
+  max-width: 600px; /* keeps video nicely sized */
+  margin: 0 auto;
+}
+
+/* Instagram Embed Styling */
+.instagram-media {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 20px auto !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  padding: 0 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
