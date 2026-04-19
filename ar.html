@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منتجب | السيرة الذاتية</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* RTL overrides */
+      body {
+        direction: rtl;
+      }
+      nav {
+        flex-direction: row-reverse;
+      }
+      nav ul {
+        flex-direction: row-reverse;
+      }
+      nav ul li a::after {
+        left: auto;
+        right: 0;
+      }
+      .essay-buttons {
+        flex-direction: row-reverse;
+      }
+      .social-links a {
+        margin-right: 0;
+        margin-left: 15px;
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          right: auto;
+          left: -100%;
+          align-items: flex-end;
+          padding: 80px 20px;
+        }
+        nav ul.active {
+          left: 0;
+          right: auto;
+        }
+        /* Hamburger slides from left in RTL */
+        .hamburger.open span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.open span:nth-child(3) {
+          transform: rotate(-45deg) translate(6px, -6px);
+        }
+      }
+
+      /* Language switcher */
+      .lang-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border: 1.5px solid #38bdf8;
+        border-radius: 20px;
+        color: #38bdf8;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+      .lang-switch:hover {
+        background: #38bdf8;
+        color: #0f172a;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <h1>منتجب</h1>
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="nav-links">
+        <li><a href="#about">عن المؤلف</a></li>
+        <li><a href="#education">التعليم</a></li>
+        <li><a href="#skills">المهارات</a></li>
+        <li><a href="#essays">المقالات</a></li>
+        <li><a href="#videos">الفيديوهات</a></li>
+        <li><a href="#seminars">الندوات</a></li>
+        <li><a href="#contact">التواصل</a></li>
+        <li><a href="index.html" class="lang-switch">EN 🌐</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <h2>مرحباً، أنا <span>منتجب</span></h2>
+      <p>طالب قانون | صانع محتوى | كاتب</p>
+      <button class="btn" onclick="scrollToSection('contact')">
+        تواصل معي
+      </button>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <h3>عن المؤلف</h3>
+      <p>
+        اسمي منتجب، وأدرس القانون في الجامعة الأمريكية في العراق، السليمانية
+        (AUIS). ينصبّ اهتمامي الأكاديمي على دراسة الجوانب المختلفة للقانون
+        الدستوري والدولي، مع تركيز خاص على قانون الطيران. يمثّل الحديث العام
+        والتثقيف القانوني ركيزتَي قوتي الرئيسيتين، وأسعى من خلال مقاطع الفيديو
+        والمقالات إلى تقديم محتوى قانوني واضح وميسّر يُعين المواطن العادي على
+        فهم القانون. وإلى جانب مسيرتي الأكاديمية، أعمل مندوب مبيعات في شركة
+        iLens، الرائدة في مجال إنتاج جولات الواقع الافتراضي بتقنية 360 درجة في
+        العراق.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h3>التعليم</h3>
+      <div class="project">
+        <h4>بكالوريوس في القانون</h4>
+        <p><strong>المعدل العام:</strong> 3.3 / 4.0</p>
+        <p><strong>معدل مواد القانون:</strong> 3.8 / 4.0</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h3>المهارات</h3>
+      <div class="skill">
+        <div class="skill-name">البحث والتحليل القانوني</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">أسس القانون الدستوري والدولي</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">الكتابة القانونية وإنتاج المحتوى التعليمي</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">الخطابة والحديث العام</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">المبيعات والتسويق</div>
+      </div>
+    </section>
+
+    <!-- ESSAYS -->
+    <section id="essays">
+      <h3>مقالات مختارة</h3>
+
+      <div class="project">
+        <h4>
+          The Iraqi Parliament Committed Its First Constitutional Breach.
+          February 22, 2026
+        </h4>
+        <div class="essay-buttons">
+          <a
+            href="essays\The_Iraqi_Parliament_Committed_Its_First_Constitutional_Breach (1).pdf"
+            target="_blank"
+            class="download-btn"
+            >قراءة المقال</a
+          >
+          <a
+            href="essays\The_Iraqi_Parliament_Committed_Its_First_Constitutional_Breach (1).pdf"
+            download
+            class="download-btn secondary-btn"
+            >تحميل PDF</a
+          >
+        </div>
+      </div>
+
+      <div class="project">
+        <h4>مجلس النواب العراقي يسجل أولى الخروقات الدستورية. 22 شباط 2026</h4>
+        <div class="essay-buttons">
+          <a
+            href="essays\مجلس_النواب_العراقي_يسجل_أولى_الخروقات_الدستورية (2).pdf"
+            target="_blank"
+            class="download-btn"
+            >اقرأ المقال</a
+          >
+          <a
+            href="essays\مجلس_النواب_العراقي_يسجل_أولى_الخروقات_الدستورية (2).pdf"
+            download
+            class="download-btn secondary-btn"
+            >تحميل المقال</a
+          >
+        </div>
+      </div>
+
+      <div class="project">
+        <h4>What comes after Khamenei's Death. March 1, 2026</h4>
+        <div class="essay-buttons">
+          <a
+            href="essays\What comes after Khamenei's Death.pdf"
+            target="_blank"
+            class="download-btn"
+            >قراءة المقال</a
+          >
+          <a
+            href="essays\What comes after Khamenei's Death.pdf"
+            download
+            class="download-btn secondary-btn"
+            >تحميل PDF</a
+          >
+        </div>
+      </div>
+
+      <div class="project">
+        <h4>ماذا بعد موت المرشد الأعلى. 1 اذار 2026</h4>
+        <div class="essay-buttons">
+          <a
+            href="essays\ماذا بعد موت المرشد الأعلى.pdf"
+            target="_blank"
+            class="download-btn"
+            >اقرأ المقال</a
+          >
+          <a
+            href="essays\ماذا بعد موت المرشد الأعلى.pdf"
+            download
+            class="download-btn secondary-btn"
+            >تحميل المقال</a
+          >
+        </div>
+      </div>
+
+      <div class="project">
+        <h4>
+          The Predicament of Interpreting the "Largest Parliamentary Bloc" in
+          Iraq. March 30, 2026
+        </h4>
+        <div class="essay-buttons">
+          <a
+            href='essays\The_Predicament_of_Interpreting_the_"Largest_Parliamentary_Bloc".pdf'
+            target="_blank"
+            class="download-btn"
+            >قراءة المقال</a
+          >
+          <a
+            href='essays\The_Predicament_of_Interpreting_the_"Largest_Parliamentary_Bloc".pdf'
+            download
+            class="download-btn secondary-btn"
+            >تحميل PDF</a
+          >
+        </div>
+      </div>
+
+      <div class="project">
+        <h4>
+          مأزق تفسير الكتلة النيابية الاكثر عدداً في مجلس النواب العراقي. 30
+          اذار 2026
+        </h4>
+        <div class="essay-buttons">
+          <a
+            href="essays\مأزق_تفسير_الكتلة_النيابية_الاكثر_عدداً_في_مجلس_النواب_العراقي (1).pdf"
+            target="_blank"
+            class="download-btn"
+            >اقرأ المقال</a
+          >
+          <a
+            href="essays\مأزق_تفسير_الكتلة_النيابية_الاكثر_عدداً_في_مجلس_النواب_العراقي (1).pdf"
+            download
+            class="download-btn secondary-btn"
+            >تحميل المقال</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos">
+      <h3>العروض والندوات</h3>
+      <div class="videos-container">
+        <div class="project">
+          <h4>حمورابي</h4>
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DVGGCF8gv5S/?igsh=MWdvNnc2MnBkNmV6Ng=="
+            data-instgrm-version="14"
+          ></blockquote>
+          <script async src="https://www.instagram.com/embed.js"></script>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEMINARS -->
+    <section id="seminars">
+      <h3>الندوات والمؤتمرات</h3>
+      <div class="project">
+        <ul>
+          <li>
+            تداعيات مشروع قانون الأحوال الشخصية العراقي الجديد – 28 أكتوبر 2024
+          </li>
+          <li>الخروقات الدستورية – يُحدَّد التاريخ لاحقاً</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h3>التواصل</h3>
+      <p><strong>البريد الإلكتروني:</strong> montajabmohsin@gmail.com</p>
+      <p><strong>الهاتف:</strong> +964 7826030107</p>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/montajab-mohsin-0919063b1/"
+          target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://www.facebook.com/mntjb.alhayry" target="_blank"
+          >Facebook</a
+        >
+        <a href="https://www.instagram.com/hammurabiauis/" target="_blank"
+          >Instagram</a
+        >
+        <a href="https://x.com/MontajabMohsin" target="_blank">X</a>
+      </div>
+    </section>
+
+    <footer>© 2026 منتجب | جميع الحقوق محفوظة</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
